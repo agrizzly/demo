@@ -13,6 +13,8 @@
     <file url="file://$PROJECT_DIR$/common/baseservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/configfile/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/configfile/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/utils/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/utils/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/permission/src/main/java" charset="UTF-8" />

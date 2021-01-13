@@ -1,4 +1,4 @@
-package com.grizzly.utils;
+package com.grizzly.utils.result;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -57,9 +57,8 @@ public class Result extends JSONObject {
     /**
      * 创建新的失败JSON对象
      * @return JSON对象
-     * @param b
      */
-    public static Result fail(boolean b){
+    public static Result fail(){
         return newInstance(500, "失败");
     }
 

@@ -15,6 +15,7 @@
         <module>utils</module>
         <module>baseservice</module>
         <module>configfile</module>
+        <module>security</module>
     </modules>
 
     <dependencies>

@@ -12,4 +12,52 @@
     <artifactId>configfile</artifactId>
 
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.30.0</version>
+                <configuration>
+                    <dockerHost>http://192.168.80.196:2375</dockerHost>
+                    <images>
+                        <image>
+                            <name>${project.name}</name>
+                            <alias>${project.name}</alias>
+                            <build>
+                                <dockerFileDir>${project.basedir}/src/main/docker/</dockerFileDir>
+                                <assembly>
+                                    <descriptorRef>artifact</descriptorRef>
+                                </assembly>
+                                <tags>
+                                    <tag>latest</tag>
+                                </tags>
+                            </build>
+                            <run>
+                                <!--数据卷，挂在文件的地址，例如输出项目日志-->
+                                <volumes>
+                                    <bind>
+                                        <volume>/root/ocrm:/ocrm</volume>
+                                    </bind>
+                                </volumes>
+                                <namingStrategy>alias</namingStrategy>
+                                <!--端口映射-->
+                                <ports>
+                                    <port>0.0.0.0:8086:8086</port>
+                                </ports>
+                                <restartPolicy>
+                                    <name>always</name>
+                                </restartPolicy>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
